@@ -1,1 +1,150 @@
+<!-- PHASE 1: HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing page for Project Athlete 360 sub-division PA360.net" />
+  <title>Project Athlete 360 - PA360.net</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo">Project Athlete 360</h1>
+      <p class="tagline">Shaping the Future of Sports Science in India</p>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <section class="mission-section">
+      <h2>Our Mission</h2>
+      <p>
+        Project Athlete 360 exists to bridge the gap between sports participation and sports science in India. We aim to provide athletes, institutions, and youth with scientific knowledge, career support, and a complete athlete-centric ecosystem.
+      </p>
+    </section>
+
+    <section class="vision-section">
+      <h2>Our Vision</h2>
+      <p>
+        To be the most trusted and empowering platform that uplifts grassroots athletes, redefines sports education, and builds a thriving national and global sports community from India.
+      </p>
+    </section>
+
+    <section class="problem-section">
+      <h2>The Problem We Are Solving</h2>
+      <p>
+        Despite India’s large youth population and rising interest in sports, we lack structured guidance, athlete education, proper talent nurturing, and modern training support. Athletes often give up due to outdated systems, social pressure, and limited access to credible resources.
+      </p>
+    </section>
+
+    <section class="action-section">
+      <h2>Call to Action</h2>
+      <p>
+        Join us in transforming Indian sports from the ground up. Whether you're an athlete, coach, educator, or supporter—Project Athlete 360 is your platform. Share, contribute, learn, and help build a better sports future.
+      </p>
+    </section>
+
+    <section class="branches-section">
+      <h2>Our Ecosystem</h2>
+      <ul>
+        <li><strong>Main Platform:</strong> <a href="https://projectathlete360.com" target="_blank">projectathlete360.com</a></li>
+        <li><strong>Community & Institutional Support:</strong> <a href="https://pa360.in" target="_blank">pa360.in</a></li>
+        <li><strong>Extended Learning & Resources:</strong> <a href="https://projectathlete360.in" target="_blank">projectathlete360.in</a></li>
+        <li><strong>This Page:</strong> PA360.net is a focused introduction branch of our mission.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Project Athlete 360. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- PHASE 2: JavaScript (script.js) -->
+
+// script.js
+// You can add interaction later if needed. For now, we’ll log readiness.
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("PA360.net landing page loaded");
+});
+
+<!-- PHASE 3: CSS (style.css) -->
+
+/* style.css */
+:root {
+  --primary-color: #1a1a1a;
+  --accent-color: #66ff66; /* Lime green (logo color) */
+  --text-color: #f5f5f5;
+  --secondary-color: #111;
+  --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.main-header {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 3rem 0;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.main-content h2 {
+  color: var(--accent-color);
+  margin-top: 2rem;
+}
+
+.main-content p, .branches-section ul {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+ul li {
+  list-style: square;
+  margin: 0.5rem 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: var(--secondary-color);
+  color: #aaa;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
 
