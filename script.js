@@ -1,38 +1,52 @@
-// Smooth scrolling for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Smooth Scrolling for Anchor Links ---
+    // Selects all anchor links that start with '#'
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+    
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Prevent the default jump behavior
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
-  });
-});
 
-// Sticky Header on scroll
-const header = document.querySelector("header");
-window.addEventListener("scroll", () => {
-  header.classList.toggle("sticky", window.scrollY > 50);
-});
+    // --- Fade-in Animation on Scroll ---
+    // Select all elements with the class 'fade-in-section'
+    const sectionsToFade = document.querySelectorAll('.fade-in-section');
+    
+    // Initial fade-in for elements already in view (like the header)
+    const initialFadeIns = document.querySelectorAll('.fade-in');
+    initialFadeIns.forEach(el => el.classList.add('visible'));
 
-// Scroll animations
-const animatedElements = document.querySelectorAll(".reveal");
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Stop observing the element once it's visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+        sectionsToFade.forEach(section => {
+            observer.observe(section);
+        });
+    } else {
+        // Fallback for older browsers: just show the sections
+        sectionsToFade.forEach(section => section.classList.add('visible'));
     }
-  });
-}, { threshold: 0.1 });
-
-animatedElements.forEach(el => observer.observe(el));
-
-// Call-to-action hover effects
-document.querySelectorAll(".btn-primary").forEach(btn => {
-  btn.addEventListener("mouseover", () => {
-    btn.style.transform = "scale(1.05)";
-  });
-  btn.addEventListener("mouseout", () => {
-    btn.style.transform = "scale(1)";
-  });
 });
