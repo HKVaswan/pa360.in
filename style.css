@@ -69,6 +69,18 @@ a {
   transform: translateY(-2px);
 }
 
+/* Add this to your SHARED CLASSES section */
+.btn--ghost {
+    background-color: transparent;
+    color: #114730;
+    border: 2px solid #114730;
+}
+.btn--ghost:hover {
+    background-color: #114730;
+    color: #fbf2dc;
+    transform: translateY(-2px);
+}
+
 /* === NAVBAR === */
 .navbar {
   background-color: rgba(251, 242, 220, 0.9);
