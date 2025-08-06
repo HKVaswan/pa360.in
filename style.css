@@ -130,7 +130,6 @@ a {
   background-color: #0b3625;
 }
 
-/* Add the following for the mobile hamburger menu */
 .navbar__toggle {
   display: none; /* Hidden on desktop by default */
   background: none;
@@ -146,7 +145,7 @@ a {
   }
 
   .navbar__menu {
-    display: none; /* Hide the menu by default on mobile */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 72px;
@@ -160,7 +159,7 @@ a {
   }
 
   .navbar__menu.active {
-    display: flex; /* Show the menu when the 'active' class is added */
+    display: flex;
   }
 
   .navbar__menu ul {
@@ -174,7 +173,12 @@ a {
   }
 
   .navbar__cta {
-    display: none; /* Hide the CTA button on mobile by default */
+    display: none;
+  }
+
+  /* ADDED: Show the hamburger toggle button on mobile */
+  .navbar__toggle {
+    display: block;
   }
 }
 
