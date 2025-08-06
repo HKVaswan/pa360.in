@@ -281,11 +281,17 @@ section {
   .why-exists__inner {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+      "title title"
       "story video"
       "highlight1 highlight2"
       "highlight3 highlight4";
   }
 
+  /* Assign the grid area for the title */
+  .why-exists__inner .section__title {
+    grid-area: title;
+  }
+  
   .why-exists__story {
     grid-area: story;
   }
