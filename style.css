@@ -276,7 +276,6 @@ section {
   border-left: 4px solid #114730;
 }
 
-/* This is the key change for the desktop layout */
 @media (min-width: 768px) {
   .why-exists__inner {
     grid-template-columns: 1fr 1fr;
@@ -287,11 +286,10 @@ section {
       "highlight3 highlight4";
   }
 
-  /* Assign the grid area for the title */
   .why-exists__inner .section__title {
     grid-area: title;
   }
-  
+
   .why-exists__story {
     grid-area: story;
   }
@@ -300,15 +298,17 @@ section {
     grid-area: video;
   }
 
-  /* Assign grid areas to the highlight cards */
-  .why-exists__highlight:nth-of-type(1) {
+  .why-exists__highlight--1 {
     grid-area: highlight1;
   }
-  .why-exists__highlight:nth-of-type(2) {
+  .why-exists__highlight--2 {
     grid-area: highlight2;
   }
-  .why-exists__highlight:nth-of-type(3) {
+  .why-exists__highlight--3 {
     grid-area: highlight3;
+  }
+  .why-exists__highlight--4 {
+    grid-area: highlight4;
   }
 }
 
