@@ -48,3 +48,16 @@ if (heroVideo) {
     heroVideo.style.display = 'none';
   });
 }
+
+// === NEW CODE FOR HAMBURGER MENU ===
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.querySelector('.navbar__toggle');
+  const navbarMenu = document.querySelector('.navbar__menu');
+
+  if (toggleButton && navbarMenu) {
+    toggleButton.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
+  }
+});
+
