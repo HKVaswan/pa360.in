@@ -256,30 +256,54 @@ section {
 
 /* === WHY THIS EXISTS SECTION === */
 .why-exists__inner {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
 .why-exists__video iframe {
   width: 100%;
-  aspect-ratio: 16 / 9; /* Ensures correct video proportions */
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   border: 0;
 }
 
 .why-exists__highlight {
-    background-color: #f0e9d6;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid #114730;
+  background-color: #f0e9d6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #114730;
 }
 
+/* This is the key change for the desktop layout */
 @media (min-width: 768px) {
-    .why-exists__inner {
-        grid-template-columns: 1fr 1fr;
-    }
+  .why-exists__inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "story video"
+      "highlight1 highlight2"
+      "highlight3 highlight4";
+  }
+
+  .why-exists__story {
+    grid-area: story;
+  }
+
+  .why-exists__video {
+    grid-area: video;
+  }
+
+  /* Assign grid areas to the highlight cards */
+  .why-exists__highlight:nth-of-type(1) {
+    grid-area: highlight1;
+  }
+  .why-exists__highlight:nth-of-type(2) {
+    grid-area: highlight2;
+  }
+  .why-exists__highlight:nth-of-type(3) {
+    grid-area: highlight3;
+  }
 }
 
 /* === COLLABORATION SECTION === */
