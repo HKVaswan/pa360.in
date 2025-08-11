@@ -287,17 +287,34 @@ section { padding: 4.2rem 0; }
   .why-exists__inner {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+      "title title"
       "video story"
       "highlight1 highlight2"
       "highlight3 highlight4";
     gap: 1.6rem;
   }
-  .why-exists__video { grid-area: video; }
-  .why-exists__story { grid-area: story; padding-right: 1rem; }
-  .why-exists__highlight--1 { grid-area: highlight1; }
-  .why-exists__highlight--2 { grid-area: highlight2; }
-  .why-exists__highlight--3 { grid-area: highlight3; }
-  .why-exists__highlight--4 { grid-area: highlight4; }
+  .why-exists__title {
+    grid-area: title;
+  }
+  .why-exists__video {
+    grid-area: video;
+  }
+  .why-exists__story {
+    grid-area: story;
+    padding-right: 1rem;
+  }
+  .why-exists__highlight--1 {
+    grid-area: highlight1;
+  }
+  .why-exists__highlight--2 {
+    grid-area: highlight2;
+  }
+  .why-exists__highlight--3 {
+    grid-area: highlight3;
+  }
+  .why-exists__highlight--4 {
+    grid-area: highlight4;
+  }
 }
 
 /* ====== COMING SOON PANEL ====== */
