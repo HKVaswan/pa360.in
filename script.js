@@ -1,4 +1,4 @@
-/* =========================
+  /* =========================
    script.js — PA360 (Updated)
    - resilient (no errors if elements are missing)
    - smooth scrolling for internal anchors
@@ -162,14 +162,19 @@
   /* ---------------------------
      Heading reposition fix (desktop)
      --------------------------- */
-  document.addEventListener('DOMContentLoaded', function () {
-    const heading = document.querySelector('.your-heading-class');
-    const section = document.querySelector('.your-section-class');
+  function repositionHeading() {
+    const section = document.querySelector('.your-section-class'); // replace with real selector
+    let heading = section ? section.querySelector('h2, h1, .your-heading-class') : null;
 
     if (heading && section && window.innerWidth >= 1024) {
-      section.insertBefore(heading, section.firstChild);
+      if (section.firstElementChild !== heading) {
+        section.insertBefore(heading, section.firstChild);
+      }
     }
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', repositionHeading);
+  window.addEventListener('resize', throttle(repositionHeading, 250));
 
   /* ---------------------------
      Helpers
