@@ -429,3 +429,45 @@ a:focus, button:focus { outline: 3px solid rgba(17,71,48,0.12); outline-offset: 
 /* Extra safety: keep buttons from overlapping nearby text if font or zoom changes */
 .coming-soon__panel { overflow: visible; }
 
+/* ====== PATCH: Fix section title alignment & spacing (desktop) ====== */
+
+/* Make all section titles reliably centered and in normal document flow */
+.section__title {
+  position: static !important;
+  z-index: auto !important;
+  text-align: center !important;
+  margin-top: 0.6rem !important;
+  margin-bottom: 1.6rem !important;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Ensure title inside the why-exists grid takes full row and centers */
+.why-exists__inner .section__title {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+}
+
+/* Slight extra breathing room before the Coming Soon title on large screens */
+@media (min-width: 880px) {
+  #coming-title {
+    margin-top: 1.2rem !important;
+    margin-bottom: 1.8rem !important;
+  }
+}
+
+/* Defensive: prevent adjacent grid items from overlapping the title */
+.why-exists__inner,
+.coming-soon__panel {
+  overflow: visible;
+}
+
+/* If you use a very large viewport, keep title aligned inside container */
+@media (min-width: 1200px) {
+  .section__title { max-width: 1200px; }
+}
+
+
