@@ -499,3 +499,72 @@ a:focus, button:focus { outline: 3px solid rgba(17,71,48,0.12); outline-offset: 
 .why-exists__inner { gap: 1.6rem; }
 .why-exists__story { margin-top: 0.25rem; }
 
+/* =========================
+   Base styles
+========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Headings styling */
+h2, h3 {
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+/* Panel styles */
+.coming-soon__panel,
+.research__panel,
+.media__panel {
+  display: flex;
+  flex-direction: column-reverse; /* Mobile default: heading below content */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* =========================
+   Desktop overrides
+========================= */
+
+@media (min-width: 768px) {
+  /* Keep normal order for desktop */
+  .coming-soon__panel,
+  .research__panel,
+  .media__panel {
+    flex-direction: column; /* Heading above content */
+    align-items: center;
+    text-align: center;
+  }
+
+  section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =========================
+   Optional styling (example)
+========================= */
+
+.coming-soon__panel img,
+.research__panel img,
+.media__panel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+p {
+  max-width: 600px;
+  line-height: 1.5;
+  text-align: center;
+}
