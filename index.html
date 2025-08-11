@@ -10,233 +10,341 @@
     name="description"
     content="PA360 Official – Institutional gateway for sports research, collaboration, and innovation — starting in India, expanding globally."
   />
-  <title>PA360.in | Institutional Research & Collaboration Gateway</title>
+  <title>PA360.in | Institutional Research & Collaboration Gateway (Launching Soon)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header class="navbar">
-  <div class="container navbar__inner">
-    <a href="/" class="navbar__brand">
-      <img
-        src="https://i.ibb.co/cKQVt18s/Copilot-20250805-121752-2.png"
-        alt="PA360 Logo"
-        class="navbar__logo"
-      />
-    </a>
-    <nav class="navbar__menu">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#why">Why This Exists</a></li>
-        <li><a href="#connect">Collaborate</a></li>
-      </ul>
-    </nav>
-    <a href="#connect" class="navbar__cta">Partner With Us</a>
-    <button class="navbar__toggle" aria-label="Toggle navigation">
-      &#9776;
-    </button>
+  <!-- TOP BANNER -->
+  <div class="prelaunch-banner" role="region" aria-label="Pre-launch announcement">
+    <div class="container">
+      <p>
+        <strong>Launching soon:</strong> PA360's institutional gateway and research hub. Institutions & partners — express interest: 
+        <a href="mailto:teampa360@gmail.com">teampa360@gmail.com</a> • 
+        <a href="mailto:pa360official@gmail.com">pa360official@gmail.com</a>
+      </p>
+    </div>
   </div>
-</header>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="/" class="navbar__brand" aria-label="Project Athlete 360 homepage">
+        <img
+          src="https://i.ibb.co/cKQVt18s/Copilot-20250805-121752-2.png"
+          alt="PA360 Logo"
+          class="navbar__logo"
+        />
+      </a>
+
+      <nav class="navbar__menu" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why">Why This Exists</a></li>
+          <li><a href="#collaborate">Collaborate</a></li>
+        </ul>
+      </nav>
+
+      <a href="#collaborate" class="navbar__cta">Partner With Us</a>
+
+      <button class="navbar__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        &#9776;
+      </button>
+    </div>
+  </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="home" aria-label="Hero">
     <video
-  class="hero__video"
-  autoplay
-  muted
-  loop
-  playsinline
-  poster="hero-fallback.jpg"
->
-  <source
-    src="https://cdn.pixabay.com/video/2024/04/17/208387_tiny.mp4"
-    type="video/mp4"
-  />
-  Your browser does not support the video tag.
+      id="heroVideo"
+      class="hero__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="hero-fallback.jpg"
+    >
+      <source
+        src="https://cdn.pixabay.com/video/2024/04/17/208387_tiny.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
     </video>
-    <div class="hero__overlay"></div>
+
+    <div class="hero__overlay" aria-hidden="true"></div>
+
     <div class="container hero__content">
       <h1 class="hero__title">
-        Accelerating the Future of Sports Research in India and Abroad
+        Accelerating the Future of Sports Research — Launching Soon
       </h1>
       <p class="hero__subtitle">
-        A dedicated gateway for institutions, researchers, and organizations to
-        collaborate on athlete development, scientific study, and innovation.
+        PA360 is the institutional gateway for evidence-based research, applied
+        projects, and cross-institution collaboration — starting from India and expanding globally.
+        We’re preparing the platform, building the team, and inviting partners to join the first cohort.
       </p>
+
       <div class="hero__buttons">
-        <a href="#connect" class="btn btn--primary">Collaborate with Us</a>
-        <a href="https://projectathlete360.com/mission" class="btn btn--secondary" target="_blank"
-          >Learn Our Mission</a
+        <!-- Active, meaningful CTA (mailto for expressions of interest) -->
+        <a
+          href="mailto:teampa360@gmail.com?subject=PA360%20Partnership%20Interest"
+          class="btn btn--primary"
+          title="Email the PA360 team to express partnership interest"
         >
+          Express Partnership Interest
+        </a>
+
+        <!-- Helpful external link kept (mission page on main site) -->
+        <a
+          href="https://projectathlete360.com/mission"
+          class="btn btn--secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn Our Mission
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="about">
+  <section id="about" class="about" aria-labelledby="about-title">
     <div class="container about__inner">
-      <h2 class="section__title">About PA360.in</h2>
+      <h2 id="about-title" class="section__title">About PA360.in</h2>
       <p class="section__text">
         PA360.in is the official institutional arm of Project Athlete 360. We
-        facilitate partnerships, manage research publications, and drive
-        scientific innovation to elevate athlete performance and advance sports science
-        across India and around the world. Join us in building a data-driven, collaborative future
-        for every athlete and institution.
+        are intentionally launching as an introductory gateway to inform institutions and stakeholders
+        about the upcoming research, partnership opportunities, and applied projects.
+        Over the coming months we'll onboard a dedicated team, run pilot studies, and open structured
+        partnership channels for colleges, clubs, and federations.
       </p>
     </div>
   </section>
 
-<!-- WHY THIS EXISTS SECTION -->
-  <section id="why" class="why-exists">
-  <div class="container why-exists__inner">
-    <h2 class="section__title">Why This Exists</h2>
+  <!-- WHY THIS EXISTS SECTION -->
+  <section id="why" class="why-exists" aria-labelledby="why-title">
+    <div class="container why-exists__inner">
+      <h2 id="why-title" class="section__title">Why This Exists</h2>
 
-    <div class="why-exists__video">
-<iframe
-        src="https://www.youtube.com/embed/TFEH-YOXipg?si=y0cMYzpcbsSVCdja"
-        title="PA360 Intro Video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy"
-      ></iframe>
+      <div class="why-exists__video">
+        <iframe
+          src="https://www.youtube.com/embed/TFEH-YOXipg?si=y0cMYzpcbsSVCdja"
+          title="PA360 Intro Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
 
-    <div class="why-exists__story">
-<h3>What Drives This Movement?</h3>
-      <p>
-        Project Athlete 360 began with a single mission — to transform the sports system in India. Not just through awareness, but through execution. Our founder, H.K. Vaswan, once dreamed of being an athlete but lacked guidance and resources. 
-        That experience turned into a fire to build what he — and thousands of others — never had.
-      </p>
-      <p>
-        <strong>This platform exists for:</strong>
+      <div class="why-exists__story">
+        <h3>What Drives This Movement?</h3>
+        <p>
+          Project Athlete 360 began with a single mission — to transform the sports system in India.
+          Not just through awareness, but through execution. Our founder, H.K. Vaswan, once dreamed of being an athlete
+          but lacked guidance and resources. That experience became the fuel to build what many aspiring athletes and institutions never had.
+        </p>
+
+        <p>
+          <strong>This platform exists for:</strong>
+        </p>
         <ul>
-          <li>• Youths who lack access to scientific training</li>
-          <li>• Institutions with potential but no visibility</li>
-          <li>• To revolutionize sports through science, systems, and athlete-first solutions.</li>
-          <li>• Sports researchers who want impact, not just publication</li>
+          <li>Youths who lack access to scientific training</li>
+          <li>Institutions with potential but limited research capacity</li>
+          <li>Researchers seeking impact-driven applied studies</li>
+          <li>Coaches and practitioners who want usable, evidence-based solutions</li>
         </ul>
+
+        <p>
+          <em>We are here to build the missing system — practical, honest, and athlete-first.</em>
+        </p>
+      </div>
+
+      <div class="why-exists__highlight why-exists__highlight--1">
+        <h4>🔬 Science-Backed</h4>
+        <p>Evidence-based training, biomechanics, psychology, nutrition, and injury prevention.</p>
+      </div>
+
+      <div class="why-exists__highlight why-exists__highlight--2">
+        <h4>🤝 Institution-Ready</h4>
+        <p>Designed to partner with schools, colleges, and institutes for real-world impact.</p>
+      </div>
+
+      <div class="why-exists__highlight why-exists__highlight--3">
+        <h4>🚀 Movement-Scale</h4>
+        <p>Not just content — a mission to create lasting systems that scale across regions.</p>
+      </div>
+
+      <div class="why-exists__highlight why-exists__highlight--4">
+        <h4>🎯 Athlete-First Philosophy</h4>
+        <p>All work centers on practical athlete outcomes and sustainable development.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMING SOON — PARTNERSHIP & RESEARCH (Inserted here for natural flow) -->
+  <section id="coming-soon" class="coming-soon" aria-labelledby="coming-title">
+    <div class="container coming-soon__inner">
+      <h2 id="coming-title" class="section__title">Launching Soon — Partnership & Research</h2>
+
+      <div class="coming-soon__panel">
+        <div class="coming-soon__left">
+          <p class="lead">
+            We are finalising the platform and onboarding our first research partners.
+            The PA360 institutional hub will offer collaborative research pilots, applied case studies,
+            and workshops tailored for colleges, clubs, and state federations.
+          </p>
+
+          <ul class="feature-list">
+            <li><strong>What to expect:</strong> Research pilots, field-tested reports, and applied recommendations.</li>
+            <li><strong>Who should connect:</strong> Institutions, researchers, coaches, and program directors.</li>
+            <li><strong>Estimated timeline:</strong> Pilot cohort & partner onboarding — Q4 2025 (target).</li>
+          </ul>
+
+          <div class="coming-soon__actions">
+            <a
+              href="mailto:teampa360@gmail.com?subject=PA360%20Partnership%20Inquiry"
+              class="btn btn--primary"
+            >
+              Express Partnership Interest
+            </a>
+
+            <button
+              class="btn btn--disabled"
+              aria-disabled="true"
+              title="Research Hub launching soon — expressions of interest encouraged via email"
+            >
+              Research Hub — Launching Soon
+            </button>
+          </div>
+
+          <p class="muted small">
+            We'll contact early partners directly with project outlines and timelines. No spam — only partnership updates.
+          </p>
+        </div>
+
+        <div class="coming-soon__right">
+          <h3>How institutions can participate</h3>
+          <ol>
+            <li>Share priority problems or topics you want researched.</li>
+            <li>Co-design and approve a short research pilot schedule.</li>
+            <li>Receive a concise, applied report with practical recommendations for implementation.</li>
+          </ol>
+
+          <p class="note">
+            Note: At this stage we are inviting expressions of interest only. Formal partnership onboarding and a partner portal will launch with the full platform.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLABORATION SECTION (Refined for pre-launch) -->
+  <section id="collaborate" class="collab" aria-labelledby="collab-title">
+    <div class="container collab__inner">
+      <h2 id="collab-title" class="section__title">Collaborations — Opening Soon</h2>
+
+      <p class="collab__intro">
+        PA360 will partner with institutions, researchers, coaches and community leaders to run applied research and capacity-building projects.
+        If you'd like to be part of our first cohort, express interest now — we'll reach out with next steps.
       </p>
+
+      <div class="collab__types">
+        <div class="collab__card">
+          <h4>🏫 Institutions</h4>
+          <p>Co-create pilot projects, host field studies, and implement practical solutions on campus.</p>
+        </div>
+        <div class="collab__card">
+          <h4>🎓 Sports Scientists</h4>
+          <p>Partner on applied biomechanical, physiological, and psychological research with real outcomes.</p>
+        </div>
+        <div class="collab__card">
+          <h4>🎤 Media & Outreach</h4>
+          <p>Amplify findings responsibly and help us translate research into real-world adoption.</p>
+        </div>
+      </div>
+
+      <div class="collab__cta" style="margin-top:1.5rem; text-align:center;">
+        <a href="mailto:pa360official@gmail.com?subject=PA360%20Collaboration%20Interest" class="btn btn--primary">
+          Express Interest (email)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH & CASE STUDIES (Placeholder / Coming Soon) -->
+  <section id="research" class="research-highlight" aria-labelledby="research-title">
+    <div class="container research-highlight__inner">
+      <h2 id="research-title" class="section__title">Research & Case Studies — Coming Soon</h2>
       <p>
-        <em>We are not here to fit in. We are here to build the missing system.</em><br><br>
-This isn’t just media.<br>
-It’s a revolution in sports science and research.<br>
-It’s not content — it’s a movement.<br>
-<b>This is PA360.</b>  
+        Our research hub will feature pilot reports, case studies, and applied interventions that inform coaching and institutional strategy.
+        Subscribe or email us to receive priority updates for reports and partner opportunities.
       </p>
-      </div>
 
-    <div class="why-exists__highlight why-exists__highlight--1">
-      <h4>🔬 Science-Backed</h4>
-      <p>We prioritize evidence-based training, sports biomechanics, psychology, nutrition, and injury prevention.</p>
-    </div>
-
-    <div class="why-exists__highlight why-exists__highlight--2">
-      <h4>🤝 Youth & Institutional Focused</h4>
-      <p>We bridge youth ambition and institutional capacity through collaboration, research, and real field impact.</p>
-    </div>
-
-    <div class="why-exists__highlight why-exists__highlight--3">
-      <h4>🚀 A Movement, Not a Company</h4>
-      <p>PA360 isn’t just a platform—it’s a mission to restore purpose, structure, and future to Indian sports.</p>
-    </div>
-    
-  <div class="why-exists__highlight why-exists__highlight--4">
-  <h4>🎯 Athlete-First Philosophy</h4>
-  <p>Everything we create—content, systems, and solutions—puts the athlete’s journey at the center. We listen, we learn, and we build for real needs.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- COLLABORATION SECTION -->
-<section id="collaborate" class="collab">
-  <div class="container collab__inner">
-    <h2 class="section__title">Collaborate with Project Athlete 360</h2>
-    <p class="collab__intro">
-      We are building a movement that thrives on partnerships with institutions, experts, coaches, researchers, and community leaders. 
-      If you’re aligned with our vision, we want to work with you.
-    </p>
-
-    <div class="collab__types">
-      <div class="collab__card">
-        <h4>🏫 Institutions</h4>
-        <p>Partner with us to bring research, outreach, and programs to your campus or club.</p>
-      </div>
-      <div class="collab__card">
-        <h4>🎓 Sports Scientists</h4>
-        <p>Help us create impact through biomechanical, psychological, and performance-based research.</p>
-      </div>
-      <div class="collab__card">
-        <h4>🎤 Influencers & Media</h4>
-        <p>Let’s raise awareness together. Help amplify underrepresented sports and talent.</p>
+      <div style="margin-top:1rem;">
+        <button class="btn btn--disabled" aria-disabled="true" title="Research content launching soon">Research Hub — Launching Soon</button>
+        <a href="mailto:teampa360@gmail.com?subject=Research%20Interest" class="btn btn--ghost" style="margin-left:1rem;">
+          Express Research Interest
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- RESEARCH + CASE STUDIES CTA -->
-<section id="research" class="research-highlight">
-  <div class="container research-highlight__inner">
-    <h2 class="section__title">Research & Case Studies</h2>
-    <p>
-      We are not just storytellers — we are data-driven. Explore how our upcoming reports, field studies, and on-ground athlete interventions are reshaping real careers.
-    </p>
-    <a href="#" class="btn btn--primary">Explore Research</a>
-  </div>
-</section>
+  <!-- JOIN / CTA (Pre-launch posture) -->
+  <section id="join" class="join-cta" aria-labelledby="join-title">
+    <div class="container join-cta__inner">
+      <h2 id="join-title" class="section__title">Be a Part of the Movement — Early Access</h2>
+      <p>
+        Whether you're an athlete, researcher, or institutional leader — this is your moment to join the first wave.
+        We’re creating a structured, impact-first platform. Signalling interest helps us prioritise partners and pilot projects.
+      </p>
 
-<!-- JOIN / CTA SECTION -->
-<section id="join" class="join-cta">
-  <div class="container join-cta__inner">
-    <h2 class="section__title">Be a Part of the Movement</h2>
-    <p>
-      Whether you're a passionate athlete, a researcher, a sports supporter, or someone who simply believes change is overdue — this is your place.
-    </p>
-    <a href="#" class="btn btn--secondary">Join the Community</a>
-    <a href="#" class="btn btn--ghost">Contact Us</a>
-  </div>
-</section>
+      <div class="join-cta__actions" style="margin-top:1.25rem;">
+        <a href="mailto:pa360official@gmail.com?subject=Early%20Access%20Interest" class="btn btn--primary">Express Early Interest</a>
+        <button class="btn btn--disabled" aria-disabled="true" title="Community features launching soon">Join Community — Opening Soon</button>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__branding">
-      <h3>Project Athlete 360</h3>
-      <p>Changing the future of Indian sports through science, stories, and support.</p>
-    </div>
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__branding">
+        <h3>Project Athlete 360</h3>
+        <p>Changing the future of Indian sports through science, stories, and support.</p>
+      </div>
 
-    <div class="footer__links">
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#join">Join</a></li>
-          <li><a href="#research">Research</a></li>
+      <div class="footer__links">
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#why">Why This Exists</a></li>
+            <li><a href="#collaborate">Collaborate</a></li>
+            <li><a href="#research">Research</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:teampa360@gmail.com">Email: teampa360@gmail.com</a></li>
+            <li><a href="mailto:pa360official@gmail.com">Email: pa360official@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/pa360official" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@pa360official" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+            <li><a href="https://www.x.com/pa360official" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2025 Project Athlete 360. All rights reserved.</p>
+        <ul class="footer__legal">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="mailto:projectathlete360@gmail.com">Email Us</a></li>
-          <li><a href="https://www.instagram.com/pa360official">Instagram</a></li>
-          <li><a href="https://www.youtube.com/@pa360official">YouTube</a></li>
-          <li><a href="https://www.x.com/pa360official">Twitter/X</a></li>
-        </ul>
-      </div>
     </div>
-
-    <div class="footer__bottom">
-      <p>&copy; 2025 Project Athlete 360. All rights reserved.</p>
-      <ul class="footer__legal">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="script.js"></script>
-  
 </body>
 </html>
