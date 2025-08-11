@@ -1,4 +1,4 @@
-  /* =========================
+/* =========================
    script.js — PA360 (Updated)
    - resilient (no errors if elements are missing)
    - smooth scrolling for internal anchors
@@ -6,7 +6,6 @@
    - disabled CTA handling (aria-live feedback)
    - scroll animations via IntersectionObserver (with fallback)
    - hero video fallback handling
-   - heading reposition fix for desktop
    ========================= */
 
 (function () {
@@ -23,19 +22,24 @@
      Smooth scroll for internal anchors (only #hash links)
      --------------------------- */
   $$('.anchor, a[href^="#"]').forEach((anchor) => {
+    // ensure anchor actually links to an id (ignore plain "#" links)
     const href = anchor.getAttribute('href');
     if (!href || href === '#' || !href.startsWith('#')) return;
 
     anchor.addEventListener('click', (e) => {
+      // if link is a mailto or external, don't intercept
       if (anchor.getAttribute('href').startsWith('mailto:')) return;
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // update focus for accessibility
         try {
           target.setAttribute('tabindex', '-1');
           target.focus({ preventScroll: true });
-        } catch (err) {}
+        } catch (err) {
+          // ignore
+        }
       }
     });
   });
@@ -54,6 +58,7 @@
       navbarMenu.classList.toggle('active');
     });
 
+    // Close menu if a link inside is clicked (mobile UX)
     navbarMenu.addEventListener('click', (ev) => {
       const t = ev.target;
       if (t && t.tagName === 'A') {
@@ -65,6 +70,8 @@
 
   /* ---------------------------
      Disabled CTA handling
+     - prevent actions on .btn--disabled
+     - announce a short polite message via an aria-live region
      --------------------------- */
   let liveRegion = $('#pa360-live-region');
   if (!liveRegion) {
@@ -72,6 +79,7 @@
     liveRegion.id = 'pa360-live-region';
     liveRegion.setAttribute('aria-live', 'polite');
     liveRegion.setAttribute('aria-atomic', 'true');
+    // off-screen for visual users
     liveRegion.style.position = 'absolute';
     liveRegion.style.left = '-9999px';
     liveRegion.style.width = '1px';
@@ -81,24 +89,33 @@
   }
 
   $$('.btn--disabled').forEach((btn) => {
+    // ensure aria-disabled is set
     btn.setAttribute('aria-disabled', 'true');
 
+    // ignore if it's already non-interactive via pointer-events in CSS,
+    // but still guard clicks
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
 
+      // friendly announcement for screen readers
       liveRegion.textContent =
         'This feature is launching soon. Please express interest via email for priority updates.';
 
+      // small visual feedback (pulse) if CSS allows — add/remove a class quickly
       try {
         btn.classList.add('btn--pulse-temp');
         window.setTimeout(() => btn.classList.remove('btn--pulse-temp'), 800);
-      } catch (err) {}
+      } catch (err) {
+        // ignore if class can't be toggled
+      }
     });
   });
 
   /* ---------------------------
      Scroll-triggered animations
+     - use IntersectionObserver when available (preferred)
+     - fallback to throttle+scroll behavior
      --------------------------- */
   const animateEls = $$('.animate-on-scroll');
 
@@ -109,6 +126,7 @@
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('show');
+              // unobserve so animation doesn't repeat (keeps things clean)
               observer.unobserve(entry.target);
             }
           });
@@ -122,6 +140,7 @@
 
       animateEls.forEach((el) => io.observe(el));
     } else {
+      // fallback: on scroll check
       const onScroll = () => {
         const triggerBottom = window.innerHeight * 0.85;
         animateEls.forEach((el) => {
@@ -142,11 +161,13 @@
   const heroVideo = $('#heroVideo');
   if (heroVideo) {
     heroVideo.addEventListener('error', () => {
+      // hide video and reveal a fallback background if provided via CSS
       heroVideo.style.display = 'none';
       const hero = $('.hero');
       if (hero && !$('.hero .fallback-hero')) {
         const fallback = document.createElement('div');
         fallback.className = 'fallback-hero';
+        // optional: basic inline style so it's visible if no CSS for fallback
         fallback.style.width = '100%';
         fallback.style.height = '100%';
         fallback.style.background = 'linear-gradient(180deg,#0b3f2b,#063423)';
@@ -158,23 +179,6 @@
       }
     });
   }
-
-  /* ---------------------------
-     Heading reposition fix (desktop)
-     --------------------------- */
-  function repositionHeading() {
-    const section = document.querySelector('.your-section-class'); // replace with real selector
-    let heading = section ? section.querySelector('h2, h1, .your-heading-class') : null;
-
-    if (heading && section && window.innerWidth >= 1024) {
-      if (section.firstElementChild !== heading) {
-        section.insertBefore(heading, section.firstChild);
-      }
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', repositionHeading);
-  window.addEventListener('resize', throttle(repositionHeading, 250));
 
   /* ---------------------------
      Helpers
@@ -190,6 +194,10 @@
     };
   }
 
+  /* ---------------------------
+     Defensive: avoid errors if other scripts expect these globals
+     --------------------------- */
+  // Expose a minimal namespace for debugging/dev if needed
   window.PA360 = window.PA360 || {};
   window.PA360.utils = window.PA360.utils || {
     smoothScrollTo: (selector) => {
@@ -198,3 +206,4 @@
     },
   };
 })();
+
