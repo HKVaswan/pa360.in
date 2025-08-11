@@ -470,4 +470,32 @@ a:focus, button:focus { outline: 3px solid rgba(17,71,48,0.12); outline-offset: 
   .section__title { max-width: 1200px; }
 }
 
+/* ====== FIX: Put the "Why This Exists" title back in its correct place ====== */
+
+/* Keep global titles centered by default (no change),
+   but override for the why-exists section so it aligns with the grid content. */
+.why-exists__inner .section__title {
+  grid-column: 1 / -1;       /* stays at top row of the grid */
+  justify-self: start;       /* align to the left side of the grid */
+  text-align: left;          /* left-align text */
+  margin-left: 0;            /* remove centering offsets */
+  padding-left: 0.25rem;     /* small inset to line up with content */
+  width: auto;
+  align-self: start;
+}
+
+/* Ensure other major section titles remain centered */
+#coming-title,
+#research-title,
+#about-title,
+#join-title {
+  text-align: center;
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small spacing tweak so why-section title doesn't sit too close to content */
+.why-exists__inner { gap: 1.6rem; }
+.why-exists__story { margin-top: 0.25rem; }
 
